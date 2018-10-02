@@ -6,7 +6,6 @@ Created on 28 Sep 2018
 import unittest
 import LCA
 
-
 class LCATest(unittest.TestCase):
     def test_findlca(self):
         root = LCA.Node(1) 
@@ -19,7 +18,13 @@ class LCATest(unittest.TestCase):
         
         self.assertEqual(LCA.findLCA(root, 4, 5), 2)
         print("Should receive findLCA(root, 4, 5) 2. Answer received: " + str(LCA.findLCA(root, 4, 5)))
+        
         self.assertEqual(LCA.findLCA(root, 4, 6), 1)
+        print("Should receive findLCA(root, 4, 6) 1. Answer received: " + str(LCA.findLCA(root, 4, 6)))
+        
         self.assertEqual(LCA.findLCA(root, 3, 4), 1)
+        print("Should receive findLCA(root, 3, 4) 1. Answer received: " + str(LCA.findLCA(root, 3, 4)))
+        
         self.assertEqual(LCA.findLCA(root, 2, 4), 2)
+        print("Should receive findLCA(root, 2, 4) 2. Answer received: " + str(LCA.findLCA(root, 2, 4)))
         
