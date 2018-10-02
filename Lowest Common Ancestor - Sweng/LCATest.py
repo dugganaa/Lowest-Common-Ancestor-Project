@@ -22,3 +22,4 @@ class LCATest(unittest.TestCase):
         self.assertEqual(LCA.findLCA(root, 4, 6), 1)
         self.assertEqual(LCA.findLCA(root, 3, 4), 1)
         self.assertEqual(LCA.findLCA(root, 2, 4), 2)
+        
