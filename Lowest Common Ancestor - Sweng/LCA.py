@@ -13,6 +13,8 @@ class Node:
 '''
 
 
+
+
 class Node:
     def __init__(self, key, colour, count, parents, children):
         self.key = key 
