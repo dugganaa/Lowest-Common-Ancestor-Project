@@ -3,12 +3,24 @@ Created on 18 Sep 2018
 
 @author: Aaron
 '''
+
+'''
 class Node:
     def __init__(self, key):
         self.key = key
         self.left = None
         self.right = None
+'''
 
+class Node:
+    def __init__(self, key, colour, count, parents, children):
+        self.key = key 
+        self.colur = colour
+        self.count = count
+        self.parents = parents
+        self.children = children 
+        
+'''
 def findPath(root, path, k):
     if root is None:
         return False
@@ -21,7 +33,9 @@ def findPath(root, path, k):
     
     path.pop()
     return False
-
+'''
+def findPath(x, y, z):
+    return 
 def findLCA(root, n1, n2):
     path1 = []
     path2 = []
