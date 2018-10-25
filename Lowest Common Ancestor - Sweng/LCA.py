@@ -3,6 +3,8 @@ Created on 18 Sep 2018
 
 @author: Aaron
 '''
+from pip.__main__ import path
+from pathlib import Path
 
 '''
 class Node:
@@ -15,33 +17,33 @@ class Node:
 <<<<<<< HEAD
 
 
+<<<<<<< HEAD
 
 =======
 >>>>>>> parent of adc648a... Recommitting to dag
+=======
+'''
+>>>>>>> f5ce7abb5d6bba6a7ef9c0ff3f3c8ecddfe2b0c3
 class Node:
-    def __init__(self, key, colour, count, parents, children):
-        self.key = key 
+    def __init__(self, name, colour, count, parents, children):
+        self.name = name
         self.colur = colour
         self.count = count
         self.parents = parents
         self.children = children 
-        
 '''
-def findPath(root, path, k):
-    if root is None:
-        return False
-    path.append(root.key)
-    if root.key == k:
-        return True
-    if ((root.left != None and findPath(root.left, path, k)) or 
-        (root.right != None and findPath(root.right, path, k))):
-        return True
+def findPath(graph, start, end, path=[]):
+    path = path + [start]
+    if start == end:
+        return path
+    if not graph.has_key(start):
+        return None
+    for node in graph[start]:
+        if node not in path:
+            newpath = findPath(graph, node, end, path)
+            if newpath: return newpath
+    return None
     
-    path.pop()
-    return False
-'''
-def findPath(x, y, z):
-    return 
 def findLCA(root, n1, n2):
     path1 = []
     path2 = []

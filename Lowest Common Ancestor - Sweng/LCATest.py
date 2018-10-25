@@ -5,8 +5,10 @@ Created on 28 Sep 2018
 '''
 import unittest
 import LCA
+from _overlapped import NULL
 
 class LCATest(unittest.TestCase):
+    '''
     def test_findlca(self):
         root = LCA.Node(1) 
         root.left = LCA.Node(2) 
@@ -27,4 +29,16 @@ class LCATest(unittest.TestCase):
         
         self.assertEqual(LCA.findLCA(root, 2, 4), 2)
         print("Should receive findLCA(root, 2, 4) 2. Answer received: " + str(LCA.findLCA(root, 2, 4)))
+    '''
+    def test_findlca(self):
+        graph = {'A': ['B', 'C'],
+                 'B': ['C', 'D'],
+                 'C': ['D'],
+                 'D': ['C'],
+                 'E': ['F'],
+                 'F': ['C']}
+    
+    
+            
+            
         
