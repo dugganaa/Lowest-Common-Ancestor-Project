@@ -31,13 +31,34 @@ class LCATest(unittest.TestCase):
         print("Should receive findLCA(root, 2, 4) 2. Answer received: " + str(LCA.findLCA(root, 2, 4)))
     '''
     def test_findlca(self):
-        graph = {'A': ['B', 'C'],
-                 'B': ['C', 'D'],
-                 'C': ['D'],
-                 'D': ['C'],
-                 'E': ['F'],
-                 'F': ['C']}
-    
+        nodeA = LCA.Node('A')
+        nodeB = LCA.Node('B')
+        nodeC = LCA.Node('C')
+        nodeD = LCA.Node('D')
+        nodeE = LCA.Node('E')
+        nodeF = LCA.Node('F')
+        nodeA.left = nodeB
+        nodeA.right = nodeC
+        nodeB.left = nodeD
+        nodeB.right = nodeC
+        nodeC.left = nodeD
+        nodeC.right = nodeE
+        nodeE.left = nodeF
+        nodes = [nodeA, nodeB, nodeC, nodeD, nodeE, nodeF]
+        
+        
+        self.assertEqual(LCA.findLCA(nodes, nodeD, nodeC), nodeB.key)
+        print("Should receive findLCA(nodes, nodeD, nodeC), B. Answer received: " + str(LCA.findLCA(nodes, nodeD, nodeC)))
+        
+        self.assertEqual(LCA.findLCA(nodes, nodeD, nodeF), nodeC.key)
+        print("Should receive findLCA(nodes, nodeD, nodeF), C. Answer received: " + str(LCA.findLCA(nodes, nodeD, nodeF)))
+        
+        self.assertEqual(LCA.findLCA(nodes, nodeB, nodeF), nodeA.key)
+        print("Should receive findLCA(nodes, nodeB, nodeF), A. Answer received: " + str(LCA.findLCA(nodes, nodeB, nodeF)))
+        
+        self.assertEqual(LCA.findLCA(nodes, nodeA, nodeE), None)
+        print("Should receive findLCA(nodes, nodeA, nodeE), None. Answer received: " + str(LCA.findLCA(nodes, nodeA, nodeE)))
+        
     
             
             
