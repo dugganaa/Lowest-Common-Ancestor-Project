@@ -44,19 +44,20 @@ class LCATest(unittest.TestCase):
         nodeC.left = nodeD
         nodeC.right = nodeE
         nodeE.left = nodeF
+        nodes = [nodeA, nodeB, nodeC, nodeD, nodeE, nodeF]
         
         
-        self.assertEqual(LCA.findLCA(nodeD, nodeC), nodeB.key)
-        print("Should receive findLCA(nodeD, nodeC), B. Answer received: " + str(LCA.findLCA(nodeD, nodeC)))
+        self.assertEqual(LCA.findLCA(nodes, nodeD, nodeC), nodeB.key)
+        print("Should receive findLCA(nodes, nodeD, nodeC), B. Answer received: " + str(LCA.findLCA(nodes, nodeD, nodeC)))
         
-        self.assertEqual(LCA.findLCA(nodeD, nodeF), nodeC.key)
-        print("Should receive findLCA(nodeD, nodeF), C. Answer received: " + str(LCA.findLCA(nodeD, nodeF)))
+        self.assertEqual(LCA.findLCA(nodes, nodeD, nodeF), nodeC.key)
+        print("Should receive findLCA(nodes, nodeD, nodeF), C. Answer received: " + str(LCA.findLCA(nodes, nodeD, nodeF)))
         
-        self.assertEqual(LCA.findLCA(nodeB, nodeF), nodeA.key)
-        print("Should receive findLCA(nodeB, nodeF), A. Answer received: " + str(LCA.findLCA(nodeB, nodeF)))
+        self.assertEqual(LCA.findLCA(nodes, nodeB, nodeF), nodeA.key)
+        print("Should receive findLCA(nodes, nodeB, nodeF), A. Answer received: " + str(LCA.findLCA(nodes, nodeB, nodeF)))
         
-        self.assertEqual(LCA.findLCA(nodeA, nodeE), None)
-        print("Should receive findLCA(nodeA, nodeE), None. Answer received: " + str(LCA.findLCA(nodeA, nodeE)))
+        self.assertEqual(LCA.findLCA(nodes, nodeA, nodeE), None)
+        print("Should receive findLCA(nodes, nodeA, nodeE), None. Answer received: " + str(LCA.findLCA(nodes, nodeA, nodeE)))
         
     
             
